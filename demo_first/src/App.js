@@ -55,6 +55,7 @@ class App extends React.Component {
         </h2>
         <h2 style={{  textAlign: "center" }}>Thankyou!!!</h2>
         */}
+
         <table style={{ marginLeft: "35%" }}>
           <tr>
             <td style={{ border: "2px solid black", fontFamily: "cursive" }}>
@@ -88,12 +89,8 @@ class App extends React.Component {
             </td>
             <td style={{ border: "2px solid red" }}>Indore</td>
           </tr>
-          <tr>
-            <td style={{ border: "2px solid green", fontFamily: "cursive" }}>
-              Thanks For Visiting.
-            </td>
-          </tr>
         </table>
+        <h3>Thanks For Visiting!</h3>
       </div>
     );
   }
