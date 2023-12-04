@@ -3,12 +3,15 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 // import Arithmetic from './Arithmetic';
 //import CheckEvenOdd from './CheckEvenOdd';
-import ArrayState from './ArrayState';
+//import ArrayState from './ArrayState';
+//import PrimeOrNot from  './PrimeOrNot';
+//import AreaOf from './AreaOf'
+import CelsiusToFarenheit from './CelsiusToFarenheit';
 import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 /*
 root.render(
-  <React.StrictMode>
+  <React.StrictMode>u.
     <App />
   </React.StrictMode>
 );
@@ -24,13 +27,46 @@ root.render(
     <CheckEvenOdd/>
   </React.StrictMode>
 )
-*/
 
 root.render(
   <React.StrictMode>
     <ArrayState/>
   </React.StrictMode>
 )
+
+root.render(
+  <React.StrictMode>
+    <PrimeOrNot/>
+  </React.StrictMode>
+)
+
+root.render(
+  <React.StrictMode>
+    <AreaOf/>
+ </React.StrictMode>
+)
+*/
+
+root.render(
+  <React.StrictMode>
+    <CelsiusToFarenheit/>
+  </React.StrictMode>
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
