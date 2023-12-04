@@ -19,6 +19,8 @@ class App extends React.Component
 }
 export default App
 */
+
+  /*
 import React from "react";
 class App extends React.Component {
   render() {
@@ -31,7 +33,7 @@ class App extends React.Component {
           width: "50%",
         }}
       >
-        {/*
+     
         <h1
           style={{
             color: "red",
@@ -54,7 +56,7 @@ class App extends React.Component {
           Call me at +91-6261210849
         </h2>
         <h2 style={{  textAlign: "center" }}>Thankyou!!!</h2>
-        */}
+       
 
         <table style={{ marginLeft: "35%" }}>
           <tr>
@@ -91,8 +93,40 @@ class App extends React.Component {
           </tr>
         </table>
         <h3>Thanks For Visiting!</h3>
+        
+         
       </div>
     );
+  }
+}
+export default App;
+*/
+
+import React from "react"
+class App extends React.Component
+{
+  constructor()
+  {
+    super();
+    this.state = {x:0,y:10,name:"Aditya", res:9.15,result:true}
+  }
+  render()
+  {
+    return <div>
+      <h1 style={{textAlign:'center' , color:'red'}}>
+        Demo State:
+      </h1>
+      <b>Value of x is: {this.state.x} </b>
+      <br/>
+      <b>Value of x is: {this.state.y} </b>
+      <br/>
+      <b>Value of x is: {this.state.name} </b>
+      <br/>
+      <b>Value of x is: {this.state.res} </b>
+      <br/>
+      <b>Value of x is: {this.state.result} </b>
+      <br/>
+    </div>
   }
 }
 export default App;
