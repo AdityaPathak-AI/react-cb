@@ -5,6 +5,7 @@ class Arithmetic extends React.Component
         super()
         this.state = {x:10 , y:20}
     }
+    
     render()
     {
         return (

@@ -7,7 +7,10 @@ import './index.css';
 //import PrimeOrNot from  './PrimeOrNot';
 //import AreaOf from './AreaOf'
 //import CelsiusToFarenheit from './CelsiusToFarenheit';
-import SimpleInterest from './SimpleInterest';
+//import SimpleInterest from './SimpleInterest';
+//import Fibonacci from './Fibonacci';
+//import ObjectState from './ObjectState';
+import ArrayOfObjects from './ArrayOfObjects';
 import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 /*
@@ -52,11 +55,30 @@ root.render(
     <CelsiusToFarenheit/>
   </React.StrictMode>
 )
-*/
 
 root.render(
   <React.StrictMode>
     <SimpleInterest/>
+  </React.StrictMode>
+)
+
+
+root.render(
+  <React.StrictMode>
+    <Fibonacci/>
+  </React.StrictMode>
+)
+
+root.render(
+  <React.StrictMode>
+    <ObjectState/>
+  </React.StrictMode>
+)
+*/
+
+root.render(
+  <React.StrictMode>
+    <ArrayOfObjects/>
   </React.StrictMode>
 )
 
