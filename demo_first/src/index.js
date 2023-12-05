@@ -10,7 +10,8 @@ import './index.css';
 //import SimpleInterest from './SimpleInterest';
 //import Fibonacci from './Fibonacci';
 //import ObjectState from './ObjectState';
-import ArrayOfObjects from './ArrayOfObjects';
+//import ArrayOfObjects from './ArrayOfObjects';
+import ArraySum from './ArraySum';
 import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 /*
@@ -74,11 +75,17 @@ root.render(
     <ObjectState/>
   </React.StrictMode>
 )
-*/
 
 root.render(
   <React.StrictMode>
     <ArrayOfObjects/>
+  </React.StrictMode>
+)
+*/
+
+root.render(
+  <React.StrictMode>
+    <ArraySum/>
   </React.StrictMode>
 )
 
