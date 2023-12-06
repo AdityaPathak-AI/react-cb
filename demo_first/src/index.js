@@ -11,7 +11,8 @@ import './index.css';
 //import Fibonacci from './Fibonacci';
 //import ObjectState from './ObjectState';
 //import ArrayOfObjects from './ArrayOfObjects';
-import ArraySum from './ArraySum';
+//import ArraySum from './ArraySum';
+import ArrayReverse from './ArrayReverse';
 import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 /*
@@ -85,7 +86,7 @@ root.render(
 
 root.render(
   <React.StrictMode>
-    <ArraySum/>
+    <ArrayReverse/>
   </React.StrictMode>
 )
 

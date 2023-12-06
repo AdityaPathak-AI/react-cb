@@ -144,7 +144,7 @@ class App extends React.Component {
               {this.state.std.map((data, index) => {
                 let total = data.c + data.p + data.p;
                 let per = (total / 3).toFixed(2);
-
+                         
                 return (
                   <tr>
                     <td>{index + 1}</td>
@@ -168,6 +168,7 @@ class App extends React.Component {
                         : per >= 33
                         ? "D Grade"
                         : "Fail..."}
+
                     </td>
                   </tr>
                 );
