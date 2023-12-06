@@ -13,7 +13,7 @@ class ArraySum extends React.Component
         const sum = this.calculateSum();
         return (
           <div>
-            <b>The sum of Array{this.state.numbers} is {sum}</b>
+            <b>The sum of Array{this.state.numbers} is: {sum}</b>
           </div>
         );
     }
