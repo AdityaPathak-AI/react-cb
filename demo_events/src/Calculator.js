@@ -24,19 +24,7 @@ class Calculator extends React.Component {
   render() {
     return (
       <>
-        <button>1</button> &nbsp;
-        <button>2</button> &nbsp;
-        <button>3</button> <br />
-        <button>4</button> &nbsp;
-        <button>5</button> &nbsp;
-        <button>6</button> <br />
-        <button>7</button> &nbsp;
-        <button>8</button> &nbsp;
-        <button>9</button> <br />
-        <button>Addition</button> &nbsp;
-        <button>Substraction</button> &nbsp;
-        <button>Multiplication</button> &nbsp;
-        <button>Division</button> &nbsp;
+        {/* 
         <h1 style={{ textAlign: "center", color: "red" }}>Enter Data</h1>
         <input
           type="text"
@@ -58,6 +46,38 @@ class Calculator extends React.Component {
         <h1>Subtraction is: {this.state.l}</h1>
         <h1>Multiplication is: {this.state.m}</h1>
         <h1>Division is: {this.state.n}</h1>
+        */}
+
+        <div>
+          <table>
+            <thead>
+              <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>+</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>x</td>
+              </tr>
+              <tr>
+                <td>.</td>
+                <td>0</td>
+                <td>=</td>
+                <td>/</td>
+              </tr>          
+            </thead>
+          </table>
+        </div>
       </>
     );
   }

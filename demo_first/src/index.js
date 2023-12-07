@@ -12,7 +12,8 @@ import './index.css';
 //import ObjectState from './ObjectState';
 //import ArrayOfObjects from './ArrayOfObjects';
 //import ArraySum from './ArraySum';
-import ArrayReverse from './ArrayReverse';
+//import ArrayReverse from './ArrayReverse';
+import MaxMin from './MaxMin';
 import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 /*
@@ -86,7 +87,7 @@ root.render(
 
 root.render(
   <React.StrictMode>
-    <ArrayReverse/>
+    <MaxMin/>
   </React.StrictMode>
 )
 

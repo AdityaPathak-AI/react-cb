@@ -168,7 +168,6 @@ class App extends React.Component {
                         : per >= 33
                         ? "D Grade"
                         : "Fail..."}
-
                     </td>
                   </tr>
                 );
