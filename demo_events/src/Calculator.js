@@ -1,5 +1,6 @@
 import React from "react";
 class Calculator extends React.Component {
+  /*
   constructor() {
     super();
     this.state = { x: 0, y: 0, add: 0 };
@@ -20,7 +21,7 @@ class Calculator extends React.Component {
       m: multiply,
       n: division,
     });
-  };
+  };*/
   render() {
     return (
       <>
@@ -52,29 +53,73 @@ class Calculator extends React.Component {
           <table>
             <thead>
               <tr>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
-                <td>+</td>
+                <td>
+                  <button>1</button>
+                </td>
+                <td>
+                  <button>2</button>
+                </td>
+                <td>
+                  <button>3</button>
+                </td>
+                <td>
+                  <button>+</button>
+                </td>
               </tr>
               <tr>
-                <td>4</td>
-                <td>5</td>
-                <td>6</td>
-                <td>-</td>
+                <td>
+                  <button>4</button>
+                </td>
+                <td>
+                  <button>5</button>
+                </td>
+                <td>
+                  <button>6</button>
+                </td>
+                <td>
+                  <button>-</button>
+                </td>
               </tr>
               <tr>
-                <td>7</td>
-                <td>8</td>
-                <td>9</td>
-                <td>x</td>
+                <td>
+                  <button>7</button>
+                </td>
+                <td>
+                  <button>8</button>
+                </td>
+                <td>
+                  <button>9</button>
+                </td>
+                <td>
+                  <button>x</button>
+                </td>
               </tr>
               <tr>
-                <td>.</td>
-                <td>0</td>
-                <td>=</td>
-                <td>/</td>
-              </tr>          
+                <td>
+                  <button>.</button>
+                </td>
+                <td>
+                  <button>0</button>
+                </td>
+                <td>
+                  <button>=</button>
+                </td>
+                <td>
+                  <button>/</button>
+                </td>
+              </tr>
+              <tr>
+                <td colSpan={4}>
+                  <input
+                    style={{
+                      border:'none',
+                      height:'100px' ,
+                      width : '600px',
+                      backgroundColor: "rgb(243, 62, 62)",
+                    }}
+                  ></input>
+                </td>
+              </tr>
             </thead>
           </table>
         </div>

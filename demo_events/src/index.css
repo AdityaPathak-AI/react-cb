@@ -1,6 +1,6 @@
 table
 {
-  margin-left: 30%;
+  margin-left: 33%;
   margin-top: 12%;
 }
 
@@ -14,4 +14,12 @@ td
   font-weight: 600;
   font-size: 100px;
   background-color: rgb(243, 62, 62);
+}
+
+button
+{
+  width: 150px;
+  height: 120px;
+  font-weight: 600;
+  font-size: 100px;
 }
