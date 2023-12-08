@@ -6,7 +6,7 @@ class App extends React.Component {
       std: [
         {
           roll: 101,
-          name: "Rudrapratap",
+          name: "Rudrapratap ",
           fees: 50000,
           mobile: "9893180362",
           class: "12th",
@@ -20,8 +20,8 @@ class App extends React.Component {
           fees: 50000,
           mobile: "9893180363",
           class: "11th",
-          p: 44,
-          c: 44,
+          p: 70,
+          c: 64,
           m: 56,
         },
         {
@@ -46,7 +46,7 @@ class App extends React.Component {
         },
         {
           roll: 105,
-          name: "Rudiger",
+          name: "Antonie Rudiger",
           fees: 50000,
           mobile: "6893180672",
           class: "12th",
@@ -66,10 +66,11 @@ class App extends React.Component {
     var Rno = this.roll.value;
     var nm = this.name.value;
     var cls = this.class.value;
+    var fees = this.fees.value;
     var mob = this.mobile.value;
-    var ph = this.p.value;
-    var ch = this.c.value;
-    var mh = this.m.value;
+    var ph = this.p.value*1;
+    var ch = this.c.value*1;
+    var mh = this.m.value*1;
 
     console.log(
       Rno +
@@ -78,6 +79,8 @@ class App extends React.Component {
         ":" +
         cls +
         ":" +
+        fees +
+        ":"+
         mob +
         ":" +
         ph +
@@ -93,6 +96,7 @@ class App extends React.Component {
       name: nm,
       class: cls,
       mobile: mob,
+      fees : fees,
       p: ph,
       c: ch,
       m: mh,
@@ -112,23 +116,28 @@ class App extends React.Component {
 
     for (var st of this.state.std) {
       //console.log(st);
-      if (data == st.roll || data == st.mobile) {
+      if (data == st.roll || data == st.mobile ) {
         this.setState({ checkStatus: true });
       }
     }
   };
 
-  editStudentdata = () => {
-    alert("Edit Student function called...");
+  editStudentdata = () => 
+  {
+    
+    
   };
 
-  deleteStudentdata = () => {
-    alert("Delete Student function called...");
+  deleteStudentdata = (index) => 
+  {
+    const updatedStudents = [...this.state.std];
+    updatedStudents.splice(index, 1);
+    this.setState({ std: updatedStudents });
   };
 
   render() {
     return (
-      <div className="container">
+      <div className="container-fluid">
         <div className="bg-warning container">
           <h1 className="text-center">Enter Student Data:</h1>
           <form>
@@ -201,7 +210,7 @@ class App extends React.Component {
         </div>
         <hr />
 
-        <div className="table-responsive bg-warning">
+        <div className="table-responsive bg-warning ">
           <h1 className="text-center">Student Data</h1>
 
           <table className="table table-bordered table-striped table-hover bs-success text-dander">
@@ -222,14 +231,13 @@ class App extends React.Component {
                 <th>Operation</th>
               </tr>
             </thead>
-
             <tbody className="table">
               {this.state.std.map((data, index) => {
-                let total = data.c + data.p + data.p;
+                let total = data.c + data.p + data.m;
                 let per = (total / 3).toFixed(2);
-
+                
                 return (
-                  <tr>
+                  <tr key={index}>
                     <td>{index + 1}</td>
                     <td>{data.roll}</td>
                     <td>{data.name}</td>
@@ -242,31 +250,20 @@ class App extends React.Component {
                     <td>{total}</td>
                     <td>{per}</td>
                     <td>
-                      {per >= 60
+                      {per >= 90
                         ? "A Grade"
-                        : per >= 55
+                        : per >= 80
                         ? "B Grade"
-                        : per >= 45
+                        : per >= 70
                         ? "C Grade"
-                        : per >= 33
+                        : per >= 60
                         ? "D Grade"
                         : "Fail..."}
                     </td>
                     <td>
-                      <button
-                        className="btn btn-success"
-                        onClick={this.editStudentdata}
-                      >
-                        Edit
-                      </button>
-                      &nbsp;
-                      <button
-                        className="btn btn-danger"
-                        onClick={this.deleteStudentdata}
-                      >
-                        {" "}
-                        Delete
-                      </button>
+                      <button className="btn btn-success"onClick={this.editStudentdata}>Edit</button>
+                       &nbsp;
+                      <button className="btn btn-danger" onClick={this.deleteStudentdata}>Delete </button>
                     </td>
                   </tr>
                 );
@@ -279,5 +276,4 @@ class App extends React.Component {
     );
   }
 }
-
 export default App;
