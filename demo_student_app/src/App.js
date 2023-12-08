@@ -59,7 +59,9 @@ class App extends React.Component {
     };
   }
 
-  addStudentdata = (event) => {
+
+  addStudentdata = (event) => 
+  {
     alert("New Student Added.");
     event.preventDefault();
 
@@ -68,11 +70,27 @@ class App extends React.Component {
     var cls = this.class.value;
     var fees = this.fees.value;
     var mob = this.mobile.value;
-    var ph = this.p.value*1;
-    var ch = this.c.value*1;
-    var mh = this.m.value*1;
+    var ph = this.p.value * 1;
+    var ch = this.c.value * 1;
+    var mh = this.m.value * 1;
 
-    console.log(
+    if (
+      !Rno ||
+      !nm ||
+      !cls ||
+      !fees ||
+      !mob ||
+      isNaN(ph) ||
+      isNaN(ch) ||
+      isNaN(mh) ||
+      mob.length !== 10
+      ) 
+     {
+      alert("Please fill in all the fields and enter valid numerical values for marks.");
+      return;
+    }
+    
+    /* console.log(
       Rno +
         ":" +
         nm +
@@ -90,13 +108,16 @@ class App extends React.Component {
         mh +
         ":"
     );
+    */
+
+    //Student Object Created
 
     var obj = {
       roll: Rno,
       name: nm,
       class: cls,
       mobile: mob,
-      fees : fees,
+      fees: fees,
       p: ph,
       c: ch,
       m: mh,
@@ -106,6 +127,7 @@ class App extends React.Component {
 
     var arr = this.state.std;
     arr.push(obj); //object added in array
+
     //array set on state
     this.setState({ std: arr });
   };
@@ -121,6 +143,7 @@ class App extends React.Component {
       }
     }
   };
+
 
   editStudentdata = () => 
   {
@@ -189,7 +212,7 @@ class App extends React.Component {
             ></input>
             &nbsp;&nbsp;
             <input
-              type="text"
+              type="number"
               placeholder="Enter Mobile No"
               ref={(data) => (this.mobile = data)}
               onBlur={this.checkValidation}
