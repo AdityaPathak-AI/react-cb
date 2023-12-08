@@ -14,7 +14,6 @@ class Addition extends React.Component
         this.setState({x:a,y:b});
     }
 
-
     render() {
         return (
           <>

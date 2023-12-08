@@ -1,7 +1,8 @@
 import React from "react";
-import Display1 from "./Component/AdditionComponent";
+import Display from "./Component/Display";
 class Addition extends React.Component {
-  constructor() {
+  constructor() 
+  {
     super();
     this.state = { x: 0 , y:0 };
   }
@@ -9,7 +10,7 @@ class Addition extends React.Component {
     var a = this.x.value;
     var b = this.y.value;
 
-    this.setState({ x: a ,y:b });
+    this.setState({ x: a , y:b });
   };
 
   render() {
@@ -18,11 +19,15 @@ class Addition extends React.Component {
         <h1>App1:</h1>
         <input
           type="text"
-          placeholder="Enter Value of x is:"
+          placeholder="Enter Value of x:"
           ref={(data) => (this.x = data)}
+        /> 
+        <input type="text" 
+        placeholder="Enter Value of y:"
+        ref={(data) => (this.y = data)}
         />
         <button onClick={this.getUserData}>Get User Data</button>
-        <Display1 a={this.state.x} />
+        <Display a={this.state.x + this.state.y} />
       </div>
     );
   }

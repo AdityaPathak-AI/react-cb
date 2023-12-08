@@ -3,6 +3,7 @@ import Display from './Display';
 import Home from './Home';
 import Addition from './Addition'
 import Student from './Component/Student';
+
 class App extends React.Component
 {
   render()
