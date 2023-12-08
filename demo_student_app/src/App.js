@@ -145,7 +145,7 @@ class App extends React.Component {
   };
 
 
-  editStudentdata = () => 
+  editStudentdata = (index) => 
   {
     
     

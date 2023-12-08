@@ -7,8 +7,8 @@ class Addition extends React.Component {
     this.state = { x: 0 , y:0 };
   }
   getUserData = () => {
-    var a = this.x.value;
-    var b = this.y.value;
+    var a = this.x.value*1;
+    var b = this.y.value*1;
 
     this.setState({ x: a , y:b });
   };
