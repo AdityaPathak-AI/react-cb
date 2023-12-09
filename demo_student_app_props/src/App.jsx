@@ -100,8 +100,11 @@ class App extends React.Component {
     }
   };
 
-  deleteStudentData = (roll) => {
-    alert(roll);
+  deleteStudentData = (index) => 
+  {
+   const updatedStudents = [...this.state.std];
+   updatedStudents.splice(index, 1);
+   this.setState({ std: updatedStudents });
   };
 
   render() {

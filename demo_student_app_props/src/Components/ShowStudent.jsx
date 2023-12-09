@@ -29,7 +29,7 @@ class ShowStudent extends React.Component {
                 let per = (total / 3).toFixed(2);
 
                 return (
-                  <tr>
+                  <tr key={index}>
                     <td>{index + 1}</td>
                     <td>{data.roll}</td>
                     <td>{data.name}</td>
@@ -61,7 +61,7 @@ class ShowStudent extends React.Component {
                       </button>
                       <button
                         className="btn btn-danger"
-                        onClick={() => this.props.delStud(data.roll)}
+                        onClick={() => this.props.delStud(data.index)}
                       >
                         Delete
                       </button>
