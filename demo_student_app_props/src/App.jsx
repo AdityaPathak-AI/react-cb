@@ -58,24 +58,97 @@ class App extends React.Component {
           m: 86,
         },
       ],
+      checkStatus: false,
     };
   }
+
   
+
+  addStudentData = (event) => {
+    event.preventDefault();
+
+    // Retrieve values from form fields
+    const Rno = this.roll.current.value;
+    const nm = this.name.current.value;
+    const cls = this.class.current.value;
+    const fees = this.fees.current.value;
+    const mob = this.mobile.current.value;
+    const ph = parseInt(this.p.current.value, 10);
+    const ch = parseInt(this.c.current.value, 10);
+    const mh = parseInt(this.m.current.value, 10);
+
+    // Basic validation
+    if (
+      !Rno ||
+      !nm ||
+      !cls ||
+      !fees ||
+      !mob ||
+      isNaN(ph) ||
+      isNaN(ch) ||
+      isNaN(mh) ||
+      mob.length !== 10
+    ) {
+      alert(
+        "Please fill in all the fields and enter valid numerical values for marks."
+      );
+      return;
+    }
+
+    // Check if the roll number or mobile already exists
+    const isRollExist = this.state.std.some((student) => student.roll === Rno);
+    const isMobileExist = this.state.std.some(
+      (student) => student.mobile === mob
+    );
+
+    if (isRollExist || isMobileExist) {
+      alert("Roll number or mobile already exists.");
+      return;
+    }
+
+    // Create a new student object
+    const newStudent = {
+      roll: Rno,
+      name: nm,
+      class: cls,
+      mobile: mob,
+      fees: fees,
+      p: ph,
+      c: ch,
+      m: mh,
+    };
+
+    // Update the state
+    this.setState((prevState) => ({
+      std: [...prevState.std, newStudent],
+    }));
+
+    // Optional: Reset form fields
+    this.roll.current.value = "";
+    this.name.current.value = "";
+    this.class.current.value = "";
+    this.fees.current.value = "";
+    this.mobile.current.value = "";
+    this.p.current.value = "";
+    this.c.current.value = "";
+    this.m.current.value = "";
+
+    alert("New Student Added.");
+  };
+
   editStudentData = (roll) => {
     alert(roll);
 
-    for(var obj of this.state.std)
-    {
-      if(roll == obj.roll)
-      {
+    for (var obj of this.state.std) {
+      if (roll == obj.roll) {
         var rn = obj.roll;
         var nm = obj.name;
         var fes = obj.fees;
         var mob = obj.mobile;
         var cl = obj.c;
-        var ph = obj.p;
-        var cm = obj.c;
-        var ma = obj.m;
+        var ph = obj.p * 1;
+        var cm = obj.c * 1;
+        var ma = obj.m * 1;
 
         console.log(
           rn +
@@ -92,32 +165,30 @@ class App extends React.Component {
             ":" +
             cm +
             ":" +
-            ma+
-            ":" 
+            ma +
+            ":"
         );
-
       }
     }
   };
 
-  deleteStudentData = (index) => 
-  {
-   const updatedStudents = [...this.state.std];
-   updatedStudents.splice(index, 1);
-   this.setState({ std: updatedStudents });
+  deleteStudentData = (index) => {
+    const updatedStudents = [...this.state.std];
+    updatedStudents.splice(index, 1);
+    this.setState({ std: updatedStudents });
   };
 
   render() {
     return (
       <div className="container">
-        <AddStudent />
+        <AddStudent addStudentData={this.addStudentData} />
         <hr />
         <ShowStudent
           stud={this.state.std}
           editStud={this.editStudentData}
           delStud={this.deleteStudentData}
         />
-        <EditStudent/>
+        <EditStudent />
       </div>
     );
   }

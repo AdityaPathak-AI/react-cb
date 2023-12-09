@@ -1,5 +1,6 @@
 import React from "react";
 class ShowStudent extends React.Component {
+
   render() {
     return (
       <div className="container bg-danger">

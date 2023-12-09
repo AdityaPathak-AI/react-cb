@@ -4,16 +4,24 @@ class AddStudent extends React.Component {
     super();
     this.state = { checkStatus: false };
   }
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    // Call the addStudentData function passed from the parent
+    this.props.addStudentData(event);
+  };
+
   render() {
     return (
       <div className="container ">
         <div className="bg-success container">
           <h1 className="text-center">Edit Student Data:</h1>
-          <form>
+          <form onSubmit={this.handleSubmit}>
             <input
               type="number"
               placeholder="Enter Roll No"
               ref={(data) => (this.roll = data)}
+              
               onBlur={this.checkValidation}
               onFocus={() => this.setState({ checkStatus: false })}
             />
@@ -22,6 +30,7 @@ class AddStudent extends React.Component {
               type="text"
               placeholder="Enter Name"
               ref={(data) => (this.name = data)}
+              
             ></input>
             &nbsp;&nbsp;
             <select ref={(data) => (this.class = data)}>
@@ -70,9 +79,7 @@ class AddStudent extends React.Component {
                 Roll Number Or Mobile Already Exists
               </b>
             ) : (
-              <button className="btn btn-primary">
-                Add Student Data
-              </button>
+              <button className="btn btn-primary">Add Student Data</button>
             )}
             <br />
           </form>

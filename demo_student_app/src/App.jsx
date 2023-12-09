@@ -90,26 +90,6 @@ class App extends React.Component {
       return;
     }
     
-    /* console.log(
-      Rno +
-        ":" +
-        nm +
-        ":" +
-        cls +
-        ":" +
-        fees +
-        ":"+
-        mob +
-        ":" +
-        ph +
-        ":" +
-        ch +
-        ":" +
-        mh +
-        ":"
-    );
-    */
-
     //Student Object Created
 
     var obj = {
