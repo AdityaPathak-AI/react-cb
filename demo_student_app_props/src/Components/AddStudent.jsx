@@ -5,11 +5,6 @@ class AddStudent extends React.Component {
     this.state = { checkStatus: false };
   }
 
-  handleSubmit = (event) => {
-    event.preventDefault();
-    // Call the addStudentData function passed from the parent
-    this.props.addStudentData(event);
-  };
 
   render() {
     return (
@@ -21,7 +16,6 @@ class AddStudent extends React.Component {
               type="number"
               placeholder="Enter Roll No"
               ref={(data) => (this.roll = data)}
-              
               onBlur={this.checkValidation}
               onFocus={() => this.setState({ checkStatus: false })}
             />
@@ -30,7 +24,6 @@ class AddStudent extends React.Component {
               type="text"
               placeholder="Enter Name"
               ref={(data) => (this.name = data)}
-              
             ></input>
             &nbsp;&nbsp;
             <select ref={(data) => (this.class = data)}>

@@ -1,7 +1,7 @@
-import React from 'react';
-import ShowStudent from './Components/ShowStudent';
-import AddStudent from './Components/AddStudent';
-import EditStudent from './Components/EditStudent';
+import React from "react";
+import ShowStudent from "./Components/ShowStudent";
+import AddStudent from "./Components/AddStudent";
+import EditStudent from "./Components/EditStudent";
 class App extends React.Component {
   constructor() {
     super();
@@ -62,79 +62,7 @@ class App extends React.Component {
     };
   }
 
-  
 
-  addStudentData = (event) => {
-    event.preventDefault();
-
-    // Retrieve values from form fields
-    const Rno = this.roll.current.value;
-    const nm = this.name.current.value;
-    const cls = this.class.current.value;
-    const fees = this.fees.current.value;
-    const mob = this.mobile.current.value;
-    const ph = parseInt(this.p.current.value, 10);
-    const ch = parseInt(this.c.current.value, 10);
-    const mh = parseInt(this.m.current.value, 10);
-
-    // Basic validation
-    if (
-      !Rno ||
-      !nm ||
-      !cls ||
-      !fees ||
-      !mob ||
-      isNaN(ph) ||
-      isNaN(ch) ||
-      isNaN(mh) ||
-      mob.length !== 10
-    ) {
-      alert(
-        "Please fill in all the fields and enter valid numerical values for marks."
-      );
-      return;
-    }
-
-    // Check if the roll number or mobile already exists
-    const isRollExist = this.state.std.some((student) => student.roll === Rno);
-    const isMobileExist = this.state.std.some(
-      (student) => student.mobile === mob
-    );
-
-    if (isRollExist || isMobileExist) {
-      alert("Roll number or mobile already exists.");
-      return;
-    }
-
-    // Create a new student object
-    const newStudent = {
-      roll: Rno,
-      name: nm,
-      class: cls,
-      mobile: mob,
-      fees: fees,
-      p: ph,
-      c: ch,
-      m: mh,
-    };
-
-    // Update the state
-    this.setState((prevState) => ({
-      std: [...prevState.std, newStudent],
-    }));
-
-    // Optional: Reset form fields
-    this.roll.current.value = "";
-    this.name.current.value = "";
-    this.class.current.value = "";
-    this.fees.current.value = "";
-    this.mobile.current.value = "";
-    this.p.current.value = "";
-    this.c.current.value = "";
-    this.m.current.value = "";
-
-    alert("New Student Added.");
-  };
 
   editStudentData = (roll) => {
     alert(roll);
@@ -194,4 +122,3 @@ class App extends React.Component {
   }
 }
 export default App;
-

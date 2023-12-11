@@ -69,7 +69,9 @@ class EditStudent extends React.Component {
                 Roll Number Or Mobile Already Exists
               </b>
             ) : (
-              <button className="btn btn-primary">Update Student Data</button>
+              <button className="btn btn-primary" onClick={this.handleSubmit}>
+                Update Student Data
+              </button>
             )}
             <br />
           </form>
