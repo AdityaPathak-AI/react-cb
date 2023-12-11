@@ -1,14 +1,15 @@
 import React from "react";
 class App extends React.Component{
 
-  render() {
+  render() 
+  {
     return (
-      <div>
-        <h1>React Routing</h1>
+      <div className="container-fluid bg-primary">
+        <h1 className="container bg-warning text-black font-weight-bold">
+          React Routing
+        </h1>
       </div>
-       
     );
   }
-
 }
-export default App;
+export default App; 
