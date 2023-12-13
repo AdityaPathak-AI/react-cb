@@ -7,7 +7,6 @@ const mapData = () =>{
 <button onClick={mapData} >Click to multiply<button/>
 
 
-
 #filter
 
 const mapData = () =>{
@@ -26,7 +25,7 @@ const mapData = () =>{
     let square = numbers.map((number)=>{
         return number*number;
     });
-    console.log(square)
+    console.log(square);
 }
 
 const mapData = () =>{

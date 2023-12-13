@@ -245,7 +245,7 @@ class App extends React.Component {
                     <td>{data.roll}</td>
                     <td>{data.name}</td>
                     <td>{data.class}</td>
-                    <td>{data.fees}</td>
+                    <td>{data.fees}</td>  
                     <td>{data.mobile}</td>
                     <td>{data.p}</td>
                     <td>{data.c}</td>
