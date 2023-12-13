@@ -1,0 +1,35 @@
+#MAP
+const mapData = () =>{
+    let mappedArray = users.map((user) => user.id*2);
+    console.log(mappedArray)
+}
+
+<button onClick={mapData} >Click to multiply<button/>
+
+
+
+#filter
+
+const mapData = () =>{
+    let filteredData = users.filter((user)=>{
+        return user.name.includes("a")
+    });
+}
+
+const mapData = () =>{
+    let filteredData = users.filter((user)=>{
+        return user.id <= 5;
+    });
+}
+
+const mapData = () =>{
+    let square = numbers.map((number)=>{
+        return number*number;
+    });
+    console.log(square)
+}
+
+const mapData = () =>{
+    let number
+}
+
