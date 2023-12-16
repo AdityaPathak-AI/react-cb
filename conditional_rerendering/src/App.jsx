@@ -7,9 +7,9 @@ const App = (props) =>
     return (
       <div>
         <h1>Main Component Called</h1>
-        {result ? <User /> + "👌" : <Show />}
+        {result ? <User /> : <Show />}
+        <h2>😐</h2>
       </div>
     );
-
 }
 export default App;
