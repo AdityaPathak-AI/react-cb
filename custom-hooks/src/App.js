@@ -1,25 +1,13 @@
-import React, { useState } from "react";
-//import ReactDOM from "react-dom/client";
+import {useEffect} from 'react'
 
-function FavoriteColor() {
-  const [color, setColor] = useState("red");
-
-  return (
-    <div>
-      <h1>My favorite color is {color}!</h1>
-      <button type="button" onClick={() => setColor("Blue")}>
-        Blue
-      </button>
-      <button type="button" onClick={() => setColor("Red")}>
-        Red
-      </button>
-      <button type="button" onClick={() => setColor("Pink")}>
-        Pink
-      </button>
-      <button type="button" onClick={() => setColor("Green")}>
-        Green
-      </button>
-    </div>
-  );
+const App = () =>
+{
+  useEffect(()=>{
+    console.log("Use Effect Called...");
+  }, [])
+  return<div>
+    <h1>Intro use Effect Function</h1>
+  </div>
+  
 }
-export default FavoriteColor;
+export default App;
