@@ -2,13 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 //import App3 from './App3';
-import CustomArithmetic from './CustomArithmetic';
+import CounterHook from './CounterHook';
+//import CustomArithmetic from './CustomArithmetic';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <CustomArithmetic />
+    < CounterHook/>
   </React.StrictMode>
 );
 
