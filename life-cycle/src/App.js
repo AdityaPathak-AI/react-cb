@@ -22,16 +22,18 @@ class App extends React.Component
 {
   constructor(){
     super();
-    console.log("Test");
-
+    this.state = {
+      showVisible : false
+    }
   }
   render() {
-    return (
-       <div>
-
-       </div>
-    );
-  }
+    return <div>
+        <button onClick={()=> this.state({showVisible:true})}>Show</button>
+        <button onClick={()=> this.state({showVisible:false})}>Hide</button>
+        <hr/>
+        {this.state.showVisible?<Show/>:"No Component Found!"} 
+  </div>
 
 }
-export default App
+}
+export default App;
