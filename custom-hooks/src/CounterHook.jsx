@@ -9,6 +9,7 @@ const CounterHook = () => {
   const Decrement = () => {
     if (counter === 0) {
       setCounter(0);
+      alert("Counter Reached Zero.")
     } else {
       setCounter(counter--);
     }
