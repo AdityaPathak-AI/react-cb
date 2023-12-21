@@ -35,15 +35,15 @@ const CustomArithmetic = () => {
       <br /> <br />
       <button onClick={() => handleOperation(handleAddition)}>
         Addition
-      </button>{" "}
+      </button>
       &nbsp;&nbsp;
       <button onClick={() => handleOperation(handleSubtraction)}>
         Subtraction
-      </button>{" "}
+      </button>
       &nbsp;&nbsp;
       <button onClick={() => handleOperation(handleMultiplication)}>
         Multiplication
-      </button>{" "}
+      </button>
       &nbsp;&nbsp;
       <button onClick={() => handleOperation(handleDivision)}>Division</button>
       <br />

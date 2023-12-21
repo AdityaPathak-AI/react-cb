@@ -2,7 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+//import TimeSlot from './TimeSlot';
 import reportWebVitals from './reportWebVitals';
+//import App from '../../crud-operations/src/App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

@@ -1,25 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import TimeSlot from "./TimeSlot";
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      slots: [],
+    };
+  }
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  addSlot = () => {
+    var hour = this.hh.value * 1;
+    var min = this.mm.value * 1;
+    var sec = this.ss.value * 1;
+    console.log("addSlot working");
+    var obj = { hour: hour, min: min, sec: sec };
+    console.log(obj);
+    var arrSlots = this.state.slots;
+    arrSlots.push(obj);
+    this.setState({ slots: arrSlots });
+  };
+  render() {
+    return (
+      <>
+        <input type="text" ref={(c) => (this.hh = c)} placeholder="Hour" />{" "}
+        &nbsp;
+        <input
+          type="text"
+          ref={(c) => (this.mm = c)}
+          placeholder="Minute"
+        />{" "}
+        &nbsp;
+        <input
+          type="text"
+          ref={(c) => (this.ss = c)}
+          placeholder="Second"
+        />{" "}
+        &nbsp;
+        <button onClick={this.addSlot}>Add Slot</button>
+        <hr />
+        {this.state.slots.map((slotData, index) => {
+          return <TimeSlot slot={slotData} index={index + 1} />;
+        })}
+      </>
+    );
+  }
 }
-
 export default App;

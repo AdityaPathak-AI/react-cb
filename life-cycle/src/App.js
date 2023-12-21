@@ -1,39 +1,43 @@
-import React from 'react';
+import React from "react";
 import Show from "./Show";
+//import { render } from "@testing-library/react";
+/* mounting : components is show at first time
 
+constructor
+render
+componentDidMount
 
-/*
-Mounting : component is shown at first time
-  constructor
-  render
-  componentDidMount
+updating : components state ChannelMergerNode
+shouldcomponentupdate
+render
+componentDidUpdate
 
-Updating : component state change
-  shouldComponentUpdate
-  render
-  componentDidUpdate
-  
+unmounting : component destroy
 
-Unmounting : component Destruction  
-  componentWillUnmount
+componentwillunmount
+
 */
 
-class App extends React.Component
-{
-  constructor(){
-    super();
-    this.state = {
-      showVisible : false
-    }
-  }
-  render() {
-    return <div>
-        <button onClick={()=> this.state({showVisible:true})}>Show</button>
-        <button onClick={()=> this.state({showVisible:false})}>Hide</button>
-        <hr/>
-        {this.state.showVisible?<Show/>:"No Component Found!"} 
-  </div>
 
+
+class App extends React.Component{
+    constructor()
+    {               
+        super();
+        this.state = {
+            showvisible : false
+        }
+    }
+    render()
+    {
+        return<div>
+            <button onClick={()=>this.setState({showvisible:true})}>Show</button>
+            &nbsp;&nbsp;
+            <button onClick={()=>this.setState({showvisible:false})}>Hide</button>
+            &nbsp;&nbsp;
+            <hr/>
+            {this.state.showvisible?<Show/>:"No Component Found !"}
+        </div>
+    }
 }
-}
-export default App;
+export default App
