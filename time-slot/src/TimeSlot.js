@@ -9,7 +9,7 @@ class TimeSlot extends React.Component
         minute : this.props.slot.min,
         second : this.props.slot.sec, 
         interval : 1,
-    }
+    } 
     this.intervalObj = undefined
     }
 
@@ -44,7 +44,6 @@ class TimeSlot extends React.Component
       this.intervalObj = setInterval(this.executeStopWatch , event.target.value*1000)
       this.setState({interval:event.target.value*1})
     }
-
   render()
   {
     
