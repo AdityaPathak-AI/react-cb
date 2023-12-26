@@ -13,7 +13,6 @@ const Login = () => {
 
     const userCredentials = { email: em, password: pass };
 
-    try {
       const response = await fetch(
         "http://tutorials.codebetter.in:7082/emall/user/login",
         {
@@ -22,7 +21,6 @@ const Login = () => {
           body: JSON.stringify(userCredentials),
         }
       );
-
       const result = await response.json();
 
       if (result.status) {
@@ -30,10 +28,6 @@ const Login = () => {
       } else {
         console.log("Login failed");
       }
-    } catch (error) {
-      console.error("Error during login:", error);
-      
-    }
   };
 
   return (
