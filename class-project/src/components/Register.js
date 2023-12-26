@@ -1,11 +1,13 @@
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Register() {
   var name = useRef();
   var email = useRef();
   var password = useRef();
-  var gender = useRef();
   var mobile = useRef();
+
+  const navigate = useNavigate();
 
   var registerUser = (event) => {
     event.preventDefault();
@@ -13,9 +15,31 @@ function Register() {
     var em = email.current.value;
     var pass = password.current.value;
     var mob = mobile.current.value;
-    var gen = gender.current.value;
 
-    console.log(nm + " : " + em + " : " + pass + " : " + mob + " : " + gen);
+    console.log(nm + " : " + em + " : " + pass + " : " + mob);
+
+    var obj = { name: nm, phone: mob, email: em, password: pass };
+    console.log("Object is : " + obj);
+
+    fetch("http://tutorials.codebetter.in:7082/emall/user/register", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(obj),
+    })
+      .then((resp) => resp.json())
+      .then((res) => {
+        console.log("Result is : " + res);
+        console.log("String Result is : " + JSON.stringify(res));
+
+        if (res.status) {
+          navigate("/login");
+        } else {
+          navigate("/error");
+        }
+      })
+      .catch((err) => {
+        console.log("Error is : " + JSON.stringify(err));
+      });
   };
 
   return (
@@ -26,7 +50,7 @@ function Register() {
         </div>
       </div>
 
-      <div className="container-fluid bg-3 text-center">
+      <div className="container bg-3 text-center">
         <div className="row">
           <div className="col-sm-12">
             <form onSubmit={registerUser}>
@@ -48,7 +72,7 @@ function Register() {
                   placeholder="Enter Email"
                 />
               </div>
-              <div class="form-group">
+              <div className="form-group">
                 <label>Password : </label>
                 <input
                   type="password"
@@ -57,7 +81,7 @@ function Register() {
                   placeholder="Enter Password"
                 />
               </div>
-              <div class="form-group">
+              <div className="form-group">
                 <label>Mobile : </label>
                 <input
                   type="text"
@@ -65,14 +89,6 @@ function Register() {
                   ref={mobile}
                   placeholder="Enter Mobile"
                 />
-              </div>
-              <div class="form-group">
-                <label>Gender : </label>
-                <select className="form-control" ref={gender}>
-                  <option>Select Gender</option>
-                  <option value="male">Male</option>
-                  <option value="female">Female</option>
-                </select>
               </div>
               <div className="form-group">
                 <button type="submit" className="btn btn-success form-control">

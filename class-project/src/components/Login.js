@@ -1,15 +1,39 @@
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
-function Login() {
-  var email = useRef();
-  var password = useRef();
+const Login = () => {
+  const email = useRef();
+  const password = useRef();
+  const navigate = useNavigate();
 
-  var loginUser = (event) => {
+  const loginUser = async (event) => {
     event.preventDefault();
-    var em = email.current.value;
-    var pass = password.current.value;
+    const em = email.current.value;
+    const pass = password.current.value;
 
-    console.log(em + " : " + pass);
+    const userCredentials = { email: em, password: pass };
+
+    try {
+      const response = await fetch(
+        "http://tutorials.codebetter.in:7082/emall/user/login",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(userCredentials),
+        }
+      );
+
+      const result = await response.json();
+
+      if (result.status) {
+        navigate("/success");
+      } else {
+        console.log("Login failed");
+      }
+    } catch (error) {
+      console.error("Error during login:", error);
+      
+    }
   };
 
   return (
@@ -20,7 +44,7 @@ function Login() {
         </div>
       </div>
 
-      <div className="container-fluid bg-3 text-center">
+      <div className="container bg-3 text-center">
         <div className="row">
           <div className="col-sm-12">
             <form onSubmit={loginUser}>
@@ -53,5 +77,5 @@ function Login() {
       </div>
     </>
   );
-}
+};
 export default Login;

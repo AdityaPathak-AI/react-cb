@@ -1,0 +1,97 @@
+1. GET : Category List
+
+"http://tutorials.codebetter.in:7082/emall/api/category/list"
+			
+2. POST : Category Save
+
+"http://tutorials.codebetter.in:7082/emall/api/category/save"
+
+	Format : JSON
+			{
+				cate_name : 'TV'
+			}
+
+****************************************************************************			
+
+3. GET : Brand List
+"http://tutorials.codebetter.in:7082/emall/api/brand/list"
+
+
+4. POST : Brand Save
+
+"http://tutorials.codebetter.in:7082/emall/api/brand/save"
+
+	Format : JSON
+			{
+				brand_name : 'TV'
+			}
+
+*************************************************************************
+			
+5. GET : Product List			
+			"http://tutorials.codebetter.in:7082/emall/api/product/list"
+
+6. POST : Product Save
+	"http://tutorials.codebetter.in:7082/emall/api/product/save"			
+	
+	Format : FormData
+			{
+				prod_name: String,
+				prod_price: Number,
+			        prod_cate: String,
+			        prod_brand: String,
+			        prod_image: Image,
+			}
+**********************************************************************************
+
+7. POST : Product Search
+		"http://tutorials.codebetter.in:7082/emall/api/product/search"
+
+			{
+				category : [],
+				brand : []
+			}
+
+8. POST : Product Status Change
+	 "http://tutorials.codebetter.in:7082/emall/api/product/changestatus"
+	 {
+	 	pid : string,
+	 	status : boolean
+	 }
+*************************************************************************** 
+			
+9. POST : User Register		
+	"http://tutorials.codebetter.in:7082/emall/user/register"
+	
+	Format : JSON
+	
+	{
+		name: String,
+		phone: String,
+		email: String,
+		password: String,       
+	}
+	
+10. POST : User Login		
+	"http://tutorials.codebetter.in:7082/emall/user/login"	
+	
+	Format : JSON
+	
+	{
+		email : "",
+		password : ""
+	}
+	
+11. POST : Get User
+	"http://tutorials.codebetter.in:7082/emall/user/getUser"	
+	Request + JWT Token
+****************************************************************************
+
+12. POST : Admin Login	
+
+	"http://tutorials.codebetter.in:7082/emall/user/adminlogin"	
+	{
+		adminid : "admin@gmail.com",
+		password : "12345"
+	}
+	
