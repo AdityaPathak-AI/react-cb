@@ -4,13 +4,14 @@ import "./index.css";
 //import App1 from './App1';
 import reportWebVitals from "./reportWebVitals";
 //import App3 from "./App3";
-import App4 from './App4';
+//import App4 from './App4';
 //import Addition from './Addition';
+import Properties from './Properties'
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App4 />
+    <Properties />
   </React.StrictMode>
 );
 
