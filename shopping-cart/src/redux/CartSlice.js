@@ -6,16 +6,22 @@ const slice = createSlice({
     },
     reducers:{
         addItem:(state,action)=>{
-            var data = action.payload;
-            state.value= [...state.value,data]
+            var pdata = action.payload;
+            state.value= [...state.value,{pdata,qty:1}]
     },
         removeItem:(state,action)=>{
+            var id = action.payload;
+            state.value = state.value.filter(obj=>obj.pdata.id != id);
         
     },
         incrementQTy:(state,action)=>{
+            var id = action.payload;
+            state.value = state.value.map(obj=>obj.pdata.id == id ? {...obj,qty:obj.qty+1}:obj);
         
     },
         decrementQty:(state,action)=>{
+            var id = action.payload;
+            state.value = state.value.map(obj=>obj.pdata.id == id ? {...obj , qty:obj.qty-1}:obj)
     }
 }
 })

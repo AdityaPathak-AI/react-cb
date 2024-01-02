@@ -6,12 +6,7 @@ const Menu = () =>
     const data = useSelector(state=>state.carts.value)
     return (
       <div className="container">
-        <h1
-          className="bg-success text-danger text-center"
-          style={{ padding: 10 }}
-        >
-          Shopping Cart
-        </h1>
+        <h1 className="bg-success text-danger text-center" style={{ padding: 10 }}>Shopping Cart</h1>
         <div className="container">
           <ul className="nav navbar-nav">
             <li>
