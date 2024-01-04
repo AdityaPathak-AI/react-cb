@@ -22,8 +22,14 @@ const slice = createSlice({
         decrementQty:(state,action)=>{
             var id = action.payload;
             state.value = state.value.map(obj=>obj.pdata.id == id ? {...obj , qty:obj.qty-1}:obj)
-    }
+    },
+        emptyQty:(state,action)=>{
+            var id = action.payload;
+            console.log("emptying the quantity of item with ID : ",id);
+            state.value = state.value.map(obj => obj.pdata.id == id? { ...obj,'qty':0}:obj )
+        },
+        
 }
 })
-export const {addItem , removeItem , incrementQTy , decrementQty} = slice.actions
+export const {addItem , removeItem , incrementQTy , decrementQty , emptyQty} = slice.actions
 export default slice.reducer;

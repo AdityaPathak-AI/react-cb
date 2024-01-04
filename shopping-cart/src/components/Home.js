@@ -3,12 +3,14 @@ import WebService from "../Web Service/WebService";
 import WebAPI from "../Web Service/WebAPI";
 import { useDispatch } from "react-redux";
 import { addItem } from "../redux/CartSlice";
+
 function Home() {
   const dispatch = useDispatch();
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    loadProducts(); //Fnction Call
+    loadProducts(); //Function Call
   }, []);
+
 
   var loadProducts = async () => {
     const response = await WebService.getAPICall(WebAPI.getProductData);
@@ -16,6 +18,7 @@ function Home() {
     // const data = JSON.stringify(response);
     setProducts(response.data.products);
   };
+  
 
   return (
     <div className="container">
@@ -23,7 +26,7 @@ function Home() {
       <div className="row">
         {products.map((res, index) => {
           return (
-            <div className="col-md-3">
+            //  <div className="col-md-3">
               <div className="col-xl-3 col-lg-3">
                 <div style={{ margin: "5px" }} className="text-center">
                   <img
@@ -31,8 +34,8 @@ function Home() {
                     height={80}
                     width={80}
                     className="img-rounded"
+                    alt="majak"
                   />
-                  <br />
                   <br />
                   <h5 align="center">
                     {res.title} : {res.price}
@@ -52,7 +55,7 @@ function Home() {
                 </div>
                 <br />
               </div>
-            </div>
+            // {/* </div> */}
           );
         })}
       </div>
