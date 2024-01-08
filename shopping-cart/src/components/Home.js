@@ -46,12 +46,7 @@ function Home() {
                     {res.brand} : {res.category}
                   </b>
                   <br />
-                  <button
-                    className="btn btn-primary"
-                    onClick={() => dispatch(addItem(res))}
-                  >
-                    Add to Cart
-                  </button>
+                  <button className="btn btn-primary" onClick={() => dispatch(addItem(res))}>Add to Cart</button>
                 </div>
                 <br />
               </div>
