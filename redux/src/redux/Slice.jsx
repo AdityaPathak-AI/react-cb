@@ -1,8 +1,8 @@
 import {createSlice} from '@reduxjs/toolkit'
-const slice = createSlice({
+const slice = createSlice({ 
     name : "stds",
     initialState : {
-        value:['Alphonso' , 'Antonie' , 'Karl Marx' , 'Adolf Hitler' , 'Stalin']
+        value:['']
     },
     reducers:{
         addUserName : (state,action) => {
@@ -11,7 +11,7 @@ const slice = createSlice({
         },
         removeUserName : (state,action) => {
             var data = action.payload;
-            state.value = state.value.filter(name=> name != data)
+            state.value = state.value.filter(name=> name !=data)
         },
     }
 })

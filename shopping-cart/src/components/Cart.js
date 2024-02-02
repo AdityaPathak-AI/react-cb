@@ -4,6 +4,7 @@ import {
   incrementQTy,
   removeItem,
   emptyQty,
+  clearData,
 } from "../redux/CartSlice";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
@@ -33,6 +34,13 @@ const Cart = () => {
 
   return (
     <div className="container">
+      <button
+        className="btn btn-danger"
+        style={{ float: "right" }}
+        onClick={() => dispatch(clearData())}
+      >
+        Empty Cart
+      </button>
       <h1 style={{ textAlign: "center", color: "red" }}>Cart Item</h1>
       <div className="table-responsive">
         <table className="table table-bordered table-striped table-hover">
@@ -45,6 +53,7 @@ const Cart = () => {
               <th>Quantity</th>
               <th>Amount</th>
               <th>Operation</th>
+              <th>Reset</th>
             </tr>
           </thead>
           <tbody>
@@ -64,7 +73,7 @@ const Cart = () => {
                     />
                   </td>
                   <td>{data.pdata.title}</td>
-                  <td>{data.pdata.price}</td>
+                  <td>$ {data.pdata.price}</td>
                   <td>
                     <button
                       className="btn btn-danger"
@@ -74,6 +83,7 @@ const Cart = () => {
                     </button>
                     &nbsp;&nbsp;
                     {data.qty}
+                    &nbsp;&nbsp;
                     <button
                       className="btn btn-success"
                       onClick={() => dispatch(incrementQTy(data.pdata.id))}
@@ -82,8 +92,7 @@ const Cart = () => {
                     </button>
                     &nbsp;&nbsp;
                   </td>
-                  <td>{data.pdata.price * data.qty}</td>
-
+                  <td>$ {data.pdata.price * data.qty}</td>
                   <td>
                     <button
                       className="btn btn-danger"
@@ -107,7 +116,7 @@ const Cart = () => {
         </table>
         <div>
           <h1>Total Quantity: {totalQuantity}</h1>
-          <h1>Total Amount: {totalAmount}</h1>
+          <h1>Total Amount: $ {totalAmount}</h1>
           <button className="btn btn-dark">
             <Link to="/login">Checkout</Link>
           </button>
