@@ -11,7 +11,7 @@ const slice = createSlice({
         },
         removeUserName : (state,action) => {
             var data = action.payload;
-            state.value = state.value.filter(name=> name !=data)
+            state.value = state.value.filter(name=> name != data)
         },
     }
 })
